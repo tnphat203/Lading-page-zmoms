@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 
 const PINK = "#E91E8C";
 const BLUE = "#1A3C8F";
@@ -156,7 +157,7 @@ export default function Home() {
           </div>
         </div>
         <div style={{ display: "flex", gap: 10 }}>
-          <a href="https://zmoms.vn" target="_blank" className="btn-outline" style={{ padding: "8px 20px", fontSize: "0.85rem" }}>Về Z-moms</a>
+          <a href="https://forms.gle/7GkDppQmdNpfP3TK9" target="_blank" className="btn-outline" style={{ padding: "8px 20px", fontSize: "0.85rem" }}>Về Z-moms</a>
           <a href="https://zalo.me" target="_blank" className="btn-pink" style={{ padding: "8px 20px", fontSize: "0.85rem" }}>Đăng ký</a>
         </div>
       </nav>
@@ -189,7 +190,7 @@ export default function Home() {
 
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginBottom: 36 }}>
               <a href="https://zalo.me" target="_blank" className="btn-pink">🎉 Đăng ký tham dự</a>
-              <a href="https://zmoms.vn" target="_blank" className="btn-outline">Tìm hiểu Z-moms →</a>
+              <a href="https://forms.gle/7GkDppQmdNpfP3TK9" target="_blank" className="btn-outline">Tìm hiểu Z-moms →</a>
             </div>
 
             <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
@@ -360,9 +361,72 @@ export default function Home() {
               </div>
             </div>
           </AnimSection>
+
         </div>
       </section>
+      <AnimSection delay={300}>
+        <div
+          style={{
+            marginTop: 40,
+            background: "white",
+            borderRadius: 28,
+            padding: 20,
+            boxShadow: "0 8px 32px rgba(0,0,0,0.08)",
+            border: "1px solid rgba(0,0,0,0.06)",
+          }}
+        >
+          <div
+            style={{
+              textAlign: "center",
+              marginBottom: 18,
+            }}
+          >
+            <div
+              style={{
+                fontWeight: 800,
+                fontSize: "1.2rem",
+                color: BLUE,
+                marginBottom: 6,
+              }}
+            >
+              🗺️ Sơ đồ bố cục sự kiện
+            </div>
 
+            <p
+              style={{
+                color: "#666",
+                fontSize: "0.95rem",
+                lineHeight: 1.6,
+              }}
+            >
+              Không gian được thiết kế thân thiện cho mẹ và bé với các khu vực
+              trải nghiệm, giáo dục và kết nối cộng đồng.
+            </p>
+          </div>
+
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              borderRadius: 20,
+              overflow: "hidden",
+            }}
+          >
+            <Image
+              src="/Bo-cuc.png"
+              alt="Sơ đồ bố cục sự kiện"
+              width={1400}
+              height={900}
+              style={{
+                width: "100%",
+                height: "auto",
+                display: "block",
+                borderRadius: 20,
+              }}
+            />
+          </div>
+        </div>
+      </AnimSection>
       {/* SCHEDULE */}
       <section style={{ background: `linear-gradient(135deg, #0f1f5c 0%, #1A3C8F 50%, #2d1b69 100%)`, padding: "80px 24px", color: "white" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
