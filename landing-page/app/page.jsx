@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import QRCode from "qrcode";
 
 const PINK = "#E91E8C";
 const BLUE = "#1A3C8F";
@@ -103,9 +104,23 @@ function AnimSection({ children, className = "", delay = 0 }) {
 
 export default function Home() {
   const [activeZone, setActiveZone] = useState(0);
+  const [qrUrl, setQrUrl] = useState("");
 
+  useEffect(() => {
+    QRCode.toDataURL("https://1000ngayvang.z-moms.com")
+      .then(setQrUrl)
+      .catch(console.error);
+  }, []);
   return (
-    <main style={{ fontFamily: "'Nunito', 'Be Vietnam Pro', sans-serif", background: "#FAFAFA", color: "#1a1a1a", overflowX: "hidden" }}>
+    <main
+      style={{
+        fontFamily: "'Nunito', 'Be Vietnam Pro', sans-serif",
+        background: "#FAFAFA",
+        color: "#1a1a1a",
+        overflowX: "hidden",
+        paddingTop: "84px",
+      }}
+    >
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@700;800&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -148,17 +163,56 @@ export default function Home() {
       `}</style>
 
       {/* NAV */}
-      <nav style={{ position: "sticky", top: 0, zIndex: 100, background: "rgba(255,255,255,0.95)", backdropFilter: "blur(12px)", borderBottom: "1px solid rgba(233,30,140,0.12)", padding: "14px 24px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+      <nav
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100%",
+          zIndex: 1000,
+
+          background: "rgba(255,255,255,0.75)",
+          backdropFilter: "blur(12px)",
+          borderBottom: "1px solid rgba(233,30,140,0.12)",
+
+          padding: "14px 24px",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <div style={{ width: 38, height: 38, background: `linear-gradient(135deg, ${PINK}, #7C3AED)`, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}>👶</div>
+          <div
+            style={{
+              width: 52,
+              height: 52,
+              borderRadius: "16px",
+              background: "linear-gradient(135deg, #E91E8C, #7C3AED)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              boxShadow: "0 4px 16px rgba(233,30,140,0.25)",
+              padding: 6,
+            }}
+          >
+            <Image
+              src="/logo.png"
+              alt="Z-moms Logo"
+              width={38}
+              height={38}
+              style={{
+                objectFit: "contain",
+              }}
+            />
+          </div>
           <div>
             <div style={{ fontFamily: "'Baloo 2', cursive", fontWeight: 800, color: BLUE, fontSize: "1rem", lineHeight: 1 }}>Z-moms × IPD8</div>
             <div style={{ fontSize: "0.65rem", color: "#888", letterSpacing: 1, textTransform: "uppercase" }}>Baby Intelligence Festival</div>
           </div>
         </div>
         <div style={{ display: "flex", gap: 10 }}>
-          <a href="https://forms.gle/7GkDppQmdNpfP3TK9" target="_blank" className="btn-outline" style={{ padding: "8px 20px", fontSize: "0.85rem" }}>Về Z-moms</a>
-          <a href="https://zalo.me" target="_blank" className="btn-pink" style={{ padding: "8px 20px", fontSize: "0.85rem" }}>Đăng ký</a>
+          <a href="https://z-moms.com" target="_blank" className="btn-outline" style={{ padding: "8px 20px", fontSize: "0.85rem" }}>Về Z-moms</a>
+          <a href="https://forms.gle/7GkDppQmdNpfP3TK9" target="_blank" className="btn-pink" style={{ padding: "8px 20px", fontSize: "0.85rem" }}>Đăng ký</a>
         </div>
       </nav>
 
@@ -189,8 +243,8 @@ export default function Home() {
             </p>
 
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginBottom: 36 }}>
-              <a href="https://zalo.me" target="_blank" className="btn-pink">🎉 Đăng ký tham dự</a>
-              <a href="https://forms.gle/7GkDppQmdNpfP3TK9" target="_blank" className="btn-outline">Tìm hiểu Z-moms →</a>
+              <a href="https://forms.gle/7GkDppQmdNpfP3TK9" target="_blank" className="btn-pink">🎉 Đăng ký tham dự</a>
+              <a href="https://z-moms.com" target="_blank" className="btn-outline">Tìm hiểu Z-moms →</a>
             </div>
 
             <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
@@ -504,12 +558,12 @@ export default function Home() {
               1.000 ngày đầu đời là khoảng thời gian vàng để đánh thức tiềm năng ấy. Đừng bỏ lỡ cơ hội cùng con trải qua hành trình đặc biệt này.
             </p>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-              <a href="https://zalo.me" target="_blank" style={{ background: "white", color: PINK, padding: "18px 44px", borderRadius: 50, fontWeight: 800, fontSize: "1.05rem", textDecoration: "none", boxShadow: "0 8px 32px rgba(0,0,0,0.2)", transition: "transform 0.2s", display: "inline-block" }}
+              <a href="https://forms.gle/7GkDppQmdNpfP3TK9" target="_blank" style={{ background: "white", color: PINK, padding: "18px 44px", borderRadius: 50, fontWeight: 800, fontSize: "1.05rem", textDecoration: "none", boxShadow: "0 8px 32px rgba(0,0,0,0.2)", transition: "transform 0.2s", display: "inline-block" }}
                 onMouseEnter={e => e.target.style.transform = "translateY(-3px)"}
                 onMouseLeave={e => e.target.style.transform = "translateY(0)"}>
                 🎉 Đăng ký tham dự ngay
               </a>
-              <a href="https://zmoms.vn" target="_blank" style={{ background: "transparent", color: "white", padding: "16px 44px", borderRadius: 50, fontWeight: 800, fontSize: "1.05rem", textDecoration: "none", border: "2px solid white", display: "inline-block", transition: "all 0.2s" }}
+              <a href="https://z-moms.com" target="_blank" style={{ background: "transparent", color: "white", padding: "16px 44px", borderRadius: 50, fontWeight: 800, fontSize: "1.05rem", textDecoration: "none", border: "2px solid white", display: "inline-block", transition: "all 0.2s" }}
                 onMouseEnter={e => { e.target.style.background = "white"; e.target.style.color = BLUE; }}
                 onMouseLeave={e => { e.target.style.background = "transparent"; e.target.style.color = "white"; }}>
                 Tìm hiểu thêm về Z-moms
@@ -520,12 +574,66 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer style={{ background: "#0d1117", color: "rgba(255,255,255,0.6)", padding: "36px 24px", textAlign: "center" }}>
-        <div style={{ fontFamily: "'Baloo 2', cursive", fontWeight: 800, fontSize: "1.2rem", color: "white", marginBottom: 8 }}>
-          Baby Intelligence Festival 2026
+      <footer
+        style={{
+          background: "#0d1117",
+          color: "rgba(255,255,255,0.6)",
+          padding: "36px 24px",
+          textAlign: "center",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 14,
+          }}
+        >
+          {qrUrl && (
+            <div
+              style={{
+                background: "white",
+                padding: 8,
+                borderRadius: 16,
+                boxShadow: "0 6px 20px rgba(0,0,0,0.25)",
+              }}
+            >
+              <Image
+                src={qrUrl}
+                alt="QR đăng ký sự kiện"
+                width={90}
+                height={90}
+                style={{
+                  borderRadius: 10,
+                }}
+              />
+            </div>
+          )}
+
+          <div
+            style={{
+              fontFamily: "'Baloo 2', cursive",
+              fontWeight: 800,
+              fontSize: "1.2rem",
+              color: "white",
+            }}
+          >
+            Baby Intelligence Festival 2026
+          </div>
+
+          <div style={{ fontSize: "0.85rem" }}>
+            Z-moms × IPD8 × Cộng Đồng Bầu
+          </div>
+
+          <div style={{ fontSize: "0.8rem" }}>
+            Quét QR để đăng ký tham dự sự kiện
+          </div>
+
+          <div style={{ fontSize: "0.75rem" }}>
+            © 2026 Z-moms. Để con hơn tôi!
+          </div>
         </div>
-        <div style={{ fontSize: "0.85rem", marginBottom: 12 }}>Z-moms × IPD8 × Cộng Đồng Bầu</div>
-        <div style={{ fontSize: "0.8rem" }}>© 2026 Z-moms. Để con hơn tôi!</div>
       </footer>
     </main>
   );
