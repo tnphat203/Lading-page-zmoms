@@ -563,7 +563,7 @@ export default function Home() {
                 onMouseLeave={e => e.target.style.transform = "translateY(0)"}>
                 🎉 Đăng ký tham dự ngay
               </a>
-              <a href="https://https://www.facebook.com/congdongbauzmoms/" target="_blank" style={{ background: "transparent", color: "white", padding: "16px 44px", borderRadius: 50, fontWeight: 800, fontSize: "1.05rem", textDecoration: "none", border: "2px solid white", display: "inline-block", transition: "all 0.2s" }}
+              <a href="https://www.facebook.com/congdongbauzmoms/" target="_blank" style={{ background: "transparent", color: "white", padding: "16px 44px", borderRadius: 50, fontWeight: 800, fontSize: "1.05rem", textDecoration: "none", border: "2px solid white", display: "inline-block", transition: "all 0.2s" }}
                 onMouseEnter={e => { e.target.style.background = "white"; e.target.style.color = BLUE; }}
                 onMouseLeave={e => { e.target.style.background = "transparent"; e.target.style.color = "white"; }}>
                 Tìm hiểu thêm về Z-moms
