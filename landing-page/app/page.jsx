@@ -211,7 +211,7 @@ export default function Home() {
           </div>
         </div>
         <div style={{ display: "flex", gap: 10 }}>
-          <a href="https://z-moms.com" target="_blank" className="btn-outline" style={{ padding: "8px 20px", fontSize: "0.85rem" }}>Về Z-moms</a>
+          <a href="https://www.facebook.com/congdongbauzmoms/" target="_blank" className="btn-outline" style={{ padding: "8px 20px", fontSize: "0.85rem" }}>Về Z-moms</a>
           <a href="https://forms.gle/7GkDppQmdNpfP3TK9" target="_blank" className="btn-pink" style={{ padding: "8px 20px", fontSize: "0.85rem" }}>Đăng ký</a>
         </div>
       </nav>
@@ -244,7 +244,7 @@ export default function Home() {
 
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginBottom: 36 }}>
               <a href="https://forms.gle/7GkDppQmdNpfP3TK9" target="_blank" className="btn-pink">🎉 Đăng ký tham dự</a>
-              <a href="https://z-moms.com" target="_blank" className="btn-outline">Tìm hiểu Z-moms →</a>
+              <a href="https://www.facebook.com/congdongbauzmoms/" target="_blank" className="btn-outline">Tìm hiểu Z-moms →</a>
             </div>
 
             <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
@@ -563,7 +563,7 @@ export default function Home() {
                 onMouseLeave={e => e.target.style.transform = "translateY(0)"}>
                 🎉 Đăng ký tham dự ngay
               </a>
-              <a href="https://z-moms.com" target="_blank" style={{ background: "transparent", color: "white", padding: "16px 44px", borderRadius: 50, fontWeight: 800, fontSize: "1.05rem", textDecoration: "none", border: "2px solid white", display: "inline-block", transition: "all 0.2s" }}
+              <a href="https://https://www.facebook.com/congdongbauzmoms/" target="_blank" style={{ background: "transparent", color: "white", padding: "16px 44px", borderRadius: 50, fontWeight: 800, fontSize: "1.05rem", textDecoration: "none", border: "2px solid white", display: "inline-block", transition: "all 0.2s" }}
                 onMouseEnter={e => { e.target.style.background = "white"; e.target.style.color = BLUE; }}
                 onMouseLeave={e => { e.target.style.background = "transparent"; e.target.style.color = "white"; }}>
                 Tìm hiểu thêm về Z-moms
