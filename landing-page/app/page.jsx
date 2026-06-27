@@ -212,7 +212,7 @@ export default function Home() {
         </div>
         <div style={{ display: "flex", gap: 10 }}>
           <a href="https://www.facebook.com/congdongbauzmoms/" target="_blank" className="btn-outline" style={{ padding: "8px 20px", fontSize: "0.85rem" }}>Về Z-moms</a>
-          <a href="https://forms.gle/7GkDppQmdNpfP3TK9" target="_blank" className="btn-pink" style={{ padding: "8px 20px", fontSize: "0.85rem" }}>Đăng ký</a>
+          <a href="https://forms.gle/zwgZ7Xeyk66DE1Ef7" target="_blank" className="btn-pink" style={{ padding: "8px 20px", fontSize: "0.85rem" }}>Đăng ký</a>
         </div>
       </nav>
 
@@ -243,7 +243,7 @@ export default function Home() {
             </p>
 
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginBottom: 36 }}>
-              <a href="https://forms.gle/7GkDppQmdNpfP3TK9" target="_blank" className="btn-pink">🎉 Đăng ký tham dự</a>
+              <a href="https://forms.gle/zwgZ7Xeyk66DE1Ef7" target="_blank" className="btn-pink">🎉 Đăng ký tham dự</a>
               <a href="https://www.facebook.com/congdongbauzmoms/" target="_blank" className="btn-outline">Tìm hiểu Z-moms →</a>
             </div>
 
@@ -558,7 +558,7 @@ export default function Home() {
               1.000 ngày đầu đời là khoảng thời gian vàng để đánh thức tiềm năng ấy. Đừng bỏ lỡ cơ hội cùng con trải qua hành trình đặc biệt này.
             </p>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-              <a href="https://forms.gle/7GkDppQmdNpfP3TK9" target="_blank" style={{ background: "white", color: PINK, padding: "18px 44px", borderRadius: 50, fontWeight: 800, fontSize: "1.05rem", textDecoration: "none", boxShadow: "0 8px 32px rgba(0,0,0,0.2)", transition: "transform 0.2s", display: "inline-block" }}
+              <a href="https://forms.gle/zwgZ7Xeyk66DE1Ef7" target="_blank" style={{ background: "white", color: PINK, padding: "18px 44px", borderRadius: 50, fontWeight: 800, fontSize: "1.05rem", textDecoration: "none", boxShadow: "0 8px 32px rgba(0,0,0,0.2)", transition: "transform 0.2s", display: "inline-block" }}
                 onMouseEnter={e => e.target.style.transform = "translateY(-3px)"}
                 onMouseLeave={e => e.target.style.transform = "translateY(0)"}>
                 🎉 Đăng ký tham dự ngay
