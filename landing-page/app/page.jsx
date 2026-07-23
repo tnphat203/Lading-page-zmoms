@@ -256,37 +256,27 @@ export default function Home() {
             </div>
           </div>
 
-          <div style={{ display: "flex", justifyContent: "center", position: "relative" }}>
-            {/* Big decorative circle */}
-            <div style={{ width: 380, height: 380, borderRadius: "50%", background: "linear-gradient(135deg, rgba(233,30,140,0.12), rgba(26,60,143,0.12))", display: "flex", alignItems: "center", justifyContent: "center", position: "relative" }}>
-              <div className="float-anim" style={{ fontSize: "10rem", lineHeight: 1, userSelect: "none", filter: "drop-shadow(0 20px 40px rgba(233,30,140,0.3))" }}>👶</div>
-              {/* Orbiting badges */}
-              {[
-                { emoji: "🧠", label: "80% não bộ", angle: -30, r: 190 },
-                { emoji: "⭐", label: "1.000 ngày vàng", angle: 90, r: 190 },
-                { emoji: "🌱", label: "Phát triển toàn diện", angle: 210, r: 190 },
-              ].map(({ emoji, label, angle, r }) => {
-                const rad = (angle * Math.PI) / 180;
-                return (
-                  <div key={label} style={{
-                    position: "absolute",
-                    left: `calc(50% + ${Math.cos(rad) * r}px - 56px)`,
-                    top: `calc(50% + ${Math.sin(rad) * r}px - 26px)`,
-                    background: "white",
-                    borderRadius: 20,
-                    padding: "8px 14px",
-                    boxShadow: "0 4px 20px rgba(0,0,0,0.12)",
-                    fontSize: "0.75rem",
-                    fontWeight: 700,
-                    color: BLUE,
-                    whiteSpace: "nowrap",
-                    display: "flex", alignItems: "center", gap: 6,
-                  }}>
-                    <span>{emoji}</span>{label}
-                  </div>
-                );
-              })}
-            </div>
+          <div 
+            className="float-anim"
+            style={{ 
+              display: "flex", 
+              justifyContent: "center", 
+              position: "relative" 
+            }}
+          >
+            <Image
+              src="/hero-event.png"
+              alt="Ngày hội 1.000 Ngày Vàng"
+              width={520}
+              height={520}
+              style={{
+                width: "100%",
+                maxWidth: 520,
+                height: "auto",
+                objectFit: "contain",
+                filter: "drop-shadow(0 20px 40px rgba(233,30,140,0.25))",
+              }}
+            />
           </div>
         </div>
       </section>
@@ -486,11 +476,15 @@ export default function Home() {
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <AnimSection>
             <div style={{ textAlign: "center", marginBottom: 50 }}>
-              <div style={{ display: "inline-block", background: GOLD, color: "#1a1a1a", borderRadius: 30, padding: "6px 20px", fontSize: "0.8rem", fontWeight: 700, marginBottom: 16, letterSpacing: 1 }}>LỊCH TỔ CHỨC 2026</div>
+              <div style={{ display: "inline-block", background: GOLD, color: "#1a1a1a", borderRadius: 30, padding: "6px 20px", fontSize: "0.8rem", fontWeight: 700, marginBottom: 16, letterSpacing: 1 }}>
+                DỰ KIẾN TỔ CHỨC 2026
+              </div>
               <h2 style={{ fontFamily: "'Baloo 2', cursive", fontWeight: 800, fontSize: "clamp(1.8rem, 3vw, 2.5rem)" }}>
-                12 Sự kiện trên <span style={{ color: GOLD }}>toàn quốc</span>
+                Dự kiến tổ chức tại <span style={{ color: GOLD }}>12 địa điểm</span>
               </h2>
-              <p style={{ color: "rgba(255,255,255,0.7)", marginTop: 10, fontSize: "0.95rem" }}>Từ Tháng 8 đến Tháng 12 năm 2026</p>
+              <p style={{ color: "rgba(255,255,255,0.7)", marginTop: 10, fontSize: "0.95rem" }}>
+                Danh sách bệnh viện và thời gian tổ chức dự kiến (có thể điều chỉnh theo kế hoạch triển khai)
+              </p>
             </div>
           </AnimSection>
 
@@ -502,7 +496,7 @@ export default function Home() {
                   <div>
                     <div style={{ fontWeight: 800, fontSize: "0.9rem", marginBottom: 2 }}>{s.city}</div>
                     <div style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.6)", marginBottom: 4 }}>{s.hospital}</div>
-                    <div style={{ display: "inline-block", background: `${GOLD}25`, color: GOLD, borderRadius: 20, padding: "2px 10px", fontSize: "0.75rem", fontWeight: 700 }}>{s.month}</div>
+                    <div style={{ display: "inline-block", background: `${GOLD}25`, color: GOLD, borderRadius: 20, padding: "2px 10px", fontSize: "0.75rem", fontWeight: 700 }}>Dự kiến {s.month}</div>
                   </div>
                 </div>
               </AnimSection>
