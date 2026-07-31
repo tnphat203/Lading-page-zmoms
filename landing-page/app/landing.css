@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@700;800&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.btn-pink {
+  background: linear-gradient(135deg, #e91e8c 0%, #c01070 100%);
+  color: white;
+  padding: 16px 36px;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 8px 24px rgba(233, 30, 140, 0.35);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+}
+
+.btn-pink:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(233, 30, 140, 0.45);
+}
+
+.btn-outline {
+  background: white;
+  color: #1a3c8f;
+  padding: 14px 34px;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-block;
+  border: 2.5px solid #1a3c8f;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background: #1a3c8f;
+  color: white;
+  transform: translateY(-3px);
+}
+
+.zone-tab {
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 700;
+  transition: all 0.2s;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  border: none;
+  background: transparent;
+}
+
+.zone-tab.active {
+  color: white;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 20px;
+  padding: 28px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  text-align: center;
+}
+
+.schedule-item {
+  background: white;
+  border-radius: 16px;
+  padding: 18px 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.hero-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.float-anim {
+  animation: floatY 3.5s ease-in-out infinite;
+}
+
+@keyframes floatY {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.pulse-ring {
+  animation: pulseRing 2s ease-in-out infinite;
+}
+
+@keyframes pulseRing {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #e91e8c, #7c3aed, #1a3c8f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .schedule-grid {
+    grid-template-columns: 1fr !important;
+  }
+}

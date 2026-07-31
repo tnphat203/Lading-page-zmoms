@@ -1,0 +1,215 @@
+export const COLORS = {
+  PINK: "#EC0A7D",       // Hồng Z-Moms
+  BLUE: "#173B8F",       // Xanh logo
+  GOLD: "#FFD6E8",       // Hồng nhạt dùng highlight
+  LIGHT_PINK: "#FFF5FA",
+  LIGHT_BLUE: "#F2F6FF",
+};
+
+const { PINK, BLUE, LIGHT_PINK } = COLORS;
+
+export const eventHighlights = [
+  {
+    icon: "👩‍⚕️",
+    label: "Chuyên gia & Bác sĩ",
+  },
+  {
+    icon: "🏥",
+    label: "12 Bệnh viện",
+  },
+  {
+    icon: "👨‍👩‍👧",
+    label: "6.000+ Gia đình",
+  },
+];
+
+export const partnerCommunities = [
+  {
+    name: "Z-moms",
+    tagline: "Để con hơn tôi!",
+    emoji: "💗",
+    color: PINK,
+    desc: "Cộng đồng hỗ trợ phụ nữ mang thai & nuôi con nhỏ tại Việt Nam với hơn hàng chục ngàn thành viên.",
+  },
+  {
+    name: "IPD8",
+    tagline: "Phát triển trí tuệ sớm",
+    emoji: "🧠",
+    color: BLUE,
+    desc: "Trung tâm chuyên về phát triển trí tuệ và giáo dục sớm cho trẻ, cung cấp chương trình khoa học cho phụ huynh.",
+  },
+  {
+    name: "Cộng Đồng Bầu",
+    tagline: "Đồng hành cùng mẹ bầu",
+    emoji: "🤰",
+    color: "#7C3AED",
+    desc: "Cộng đồng lớn nhất dành cho mẹ bầu tại Việt Nam, kết nối hàng triệu phụ nữ mang thai và sau sinh.",
+  },
+];
+
+export const brainDevelopmentFacts = [
+  {
+    icon: "⚡",
+    title: "700–1.000 kết nối thần kinh/giây",
+    desc: "Theo UNICEF & WHO, trong 1.000 ngày đầu đời, mỗi giây não trẻ hình thành 700–1.000 kết nối thần kinh mới. Đây là tốc độ nhanh nhất não từng đạt được.",
+    color: PINK,
+  },
+  {
+    icon: "💡",
+    title: "Nền tảng trọn đời",
+    desc: "Đây là giai đoạn quyết định nền tảng: Trí tuệ · Cảm xúc · Sức khỏe · Khả năng học tập của trẻ suốt cuộc đời.",
+    color: BLUE,
+  },
+  {
+    icon: "📚",
+    title: "Cha mẹ Việt cần kiến thức",
+    desc: "Phần lớn cha mẹ Việt Nam chưa được trang bị đầy đủ kiến thức khoa học về chăm sóc và phát triển trẻ trong giai đoạn quan trọng này.",
+    color: "#7C3AED",
+  },
+];
+
+export const zones = [
+  {
+    icon: "🎤",
+    title: "Khu Tri Thức",
+    subtitle: "Knowledge Stage",
+    desc: "Talkshow với bác sĩ nhi khoa & chuyên gia giáo dục sớm. Chủ đề: Phát triển trí thông minh của trẻ trong 1.000 ngày đầu đời.",
+    color: PINK,
+    bg: LIGHT_PINK,
+  },
+  {
+    icon: "✨",
+    title: "Khu Trải Nghiệm Giác Quan",
+    subtitle: "Sensory Experience Zone",
+    desc: "Hoạt động cho trẻ >3 tháng tuổi: Nhận biết ánh sáng, âm thanh, vận động thăng bằng, Tummy Time.",
+    color: "#7C3AED",
+    bg: "#F5F3FF",
+  },
+  {
+    icon: "🛍️",
+    title: "Khu Thương Hiệu Mẹ & Bé",
+    subtitle: "Baby Care Market",
+    desc: "Các thương hiệu trưng bày sản phẩm, phát mẫu thử và bán hàng ưu đãi tại sự kiện.",
+    color: "#0891B2",
+    bg: "#ECFEFF",
+  },
+  {
+    icon: "🌳",
+    title: "Khu Cây Điều Ước",
+    subtitle: "Wish Tree",
+    desc: "Cha mẹ viết điều ước cho con, gắn lên cây điều ước — khoảnh khắc đầy cảm xúc và ý nghĩa.",
+    color: "#16A34A",
+    bg: "#F0FDF4",
+  },
+  {
+    icon: "🎮",
+    title: "Khu Minigame Gia Đình",
+    subtitle: "Family Game Zone",
+    desc: "Thử thách bố mẹ, vận động cho bé, bốc thăm trúng thưởng — vui nhộn cho cả gia đình.",
+    color: "#EA580C",
+    bg: "#FFF7ED",
+  },
+];
+
+export const schedule = [
+  {
+    month: "Tháng 8",
+    hospitals: [
+      {
+        city: "Hồ Chí Minh",
+        hospital: "BV Quốc tế Hạnh Phúc",
+        formUrl: "https://forms.gle/zwgZ7Xeyk66DE1Ef7",
+      },
+      {
+        city: "Hà Nội",
+        hospital: "BV Nhi Hà Nội",
+        formUrl: "https://forms.gle/zwgZ7Xeyk66DE1Ef7",
+      },
+    ],
+  },
+  {
+    month: "Tháng 9",
+    hospitals: [
+      {
+        city: "Hà Nội",
+        hospital: "BV Phụ sản Hà Nội",
+        formUrl: "",
+      },
+      {
+        city: "Hồ Chí Minh",
+        hospital: "BV Quốc Tế City",
+        formUrl: "https://forms.gle/Q9z3bQbfUSZVkuc58",
+      },
+      {
+        city: "Hải Phòng",
+        hospital: "BV Đa Khoa Green HP",
+        formUrl: "",
+      },
+    ],
+  },
+  {
+    month: "Tháng 10",
+    hospitals: [
+      {
+        city: "Cần Thơ",
+        hospital: "BV Hoàn Mỹ Cửu Long",
+        formUrl: "",
+      },
+      {
+        city: "Hải Dương",
+        hospital: "BV Phụ sản Hải Dương",
+        formUrl: "",
+      },
+      {
+        city: "Hà Nội",
+        hospital: "BV Phụ sản Trung Ương",
+        formUrl: "",
+      },
+    ],
+  },
+  {
+    month: "Tháng 11",
+    hospitals: [
+      {
+        city: "Đồng Nai",
+        hospital: "BV Shingmark",
+        formUrl: "",
+      },
+      {
+        city: "Hồ Chí Minh",
+        hospital: "BV Hoàn Mỹ HCM",
+        formUrl: "",
+      },
+    ],
+  },
+  {
+    month: "Tháng 12",
+    hospitals: [
+      {
+        city: "Đà Nẵng",
+        hospital: "BV Hoàn Mỹ Đà Nẵng",
+        formUrl: "",
+      },
+      {
+        city: "Hà Nội",
+        hospital: "BV Quốc Tế HN (Phenikaa)",
+        formUrl: "",
+      },
+    ],
+  },
+];
+
+export const stats = [
+  { value: "6.000–12.000", label: "Mẹ & gia đình tham dự", icon: "👨‍👩‍👧" },
+  { value: "500K+", label: "Lượt tiếp cận online", icon: "📱" },
+  { value: "12", label: "Tỉnh thành trên cả nước", icon: "📍" },
+  { value: "80%", label: "Não bộ phát triển trong 1.000 ngày đầu", icon: "🧠" },
+];
+
+export const ageDevelopmentData = [
+  { age: "Sơ sinh", pct: 25 },
+  { age: "1 tuổi", pct: 50 },
+  { age: "2 tuổi", pct: 80 },
+  { age: "5 tuổi", pct: 90 },
+  { age: "6 tuổi", pct: 95 },
+];
