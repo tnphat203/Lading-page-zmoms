@@ -140,11 +140,7 @@ export const schedule = [
         hospital: "BV Quốc Tế City",
         formUrl: "https://forms.gle/Q9z3bQbfUSZVkuc58",
       },
-      {
-        city: "Hải Phòng",
-        hospital: "BV Đa Khoa Green HP",
-        formUrl: "",
-      },
+      
     ],
   },
   {
@@ -152,17 +148,17 @@ export const schedule = [
     hospitals: [
       {
         city: "Cần Thơ",
-        hospital: "BV Hoàn Mỹ Cửu Long",
+        hospital: "",
         formUrl: "",
       },
       {
         city: "Hải Dương",
-        hospital: "BV Phụ sản Hải Dương",
+        hospital: "",
         formUrl: "",
       },
       {
         city: "Hà Nội",
-        hospital: "BV Phụ sản Trung Ương",
+        hospital: "",
         formUrl: "",
       },
     ],
@@ -172,12 +168,12 @@ export const schedule = [
     hospitals: [
       {
         city: "Đồng Nai",
-        hospital: "BV Shingmark",
+        hospital: "",
         formUrl: "",
       },
       {
         city: "Hồ Chí Minh",
-        hospital: "BV Hoàn Mỹ HCM",
+        hospital: "",
         formUrl: "",
       },
     ],
@@ -187,12 +183,12 @@ export const schedule = [
     hospitals: [
       {
         city: "Đà Nẵng",
-        hospital: "BV Hoàn Mỹ Đà Nẵng",
+        hospital: "",
         formUrl: "",
       },
       {
         city: "Hà Nội",
-        hospital: "BV Quốc Tế HN (Phenikaa)",
+        hospital: "",
         formUrl: "",
       },
     ],
