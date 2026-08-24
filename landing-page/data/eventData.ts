@@ -72,7 +72,7 @@ export const zones = [
   {
     icon: "🎤",
     title: "Khu Tri Thức",
-    subtitle: "Knowledge Stage",
+    subtitle: "Sân khấu tri thức",
     desc: "Talkshow với bác sĩ nhi khoa & chuyên gia giáo dục sớm. Chủ đề: Phát triển trí thông minh của trẻ trong 1.000 ngày đầu đời.",
     color: PINK,
     bg: LIGHT_PINK,
@@ -80,7 +80,7 @@ export const zones = [
   {
     icon: "✨",
     title: "Khu Trải Nghiệm Giác Quan",
-    subtitle: "Sensory Experience Zone",
+    subtitle: "Khu trải nghiệm giác quan",
     desc: "Hoạt động cho trẻ >3 tháng tuổi: Nhận biết ánh sáng, âm thanh, vận động thăng bằng, Tummy Time.",
     color: "#7C3AED",
     bg: "#F5F3FF",
@@ -88,7 +88,7 @@ export const zones = [
   {
     icon: "🛍️",
     title: "Khu Thương Hiệu Mẹ & Bé",
-    subtitle: "Baby Care Market",
+    subtitle: "Khu thương hiệu mẹ & bé",
     desc: "Các thương hiệu trưng bày sản phẩm, phát mẫu thử và bán hàng ưu đãi tại sự kiện.",
     color: "#0891B2",
     bg: "#ECFEFF",
@@ -96,7 +96,7 @@ export const zones = [
   {
     icon: "🌳",
     title: "Khu Cây Điều Ước",
-    subtitle: "Wish Tree",
+    subtitle: "Cây điều ước",
     desc: "Cha mẹ viết điều ước cho con, gắn lên cây điều ước — khoảnh khắc đầy cảm xúc và ý nghĩa.",
     color: "#16A34A",
     bg: "#F0FDF4",
@@ -104,14 +104,28 @@ export const zones = [
   {
     icon: "🎮",
     title: "Khu Minigame Gia Đình",
-    subtitle: "Family Game Zone",
+    subtitle: "Khu trò chơi gia đình",
     desc: "Thử thách bố mẹ, vận động cho bé, bốc thăm trúng thưởng — vui nhộn cho cả gia đình.",
     color: "#EA580C",
     bg: "#FFF7ED",
   },
 ];
 
-export const schedule = [
+export type HospitalStatus =
+  | "upcoming"
+  | "registering"
+  | "completed";
+
+export const schedule: {
+  month: string;
+  hospitals: {
+    city: string;
+    hospital: string;
+    formUrl: string;
+    status: HospitalStatus;
+    recapUrl: string;
+  }[];
+}[] = [
   {
     month: "Tháng 8",
     hospitals: [
@@ -119,11 +133,15 @@ export const schedule = [
         city: "Hồ Chí Minh",
         hospital: "BV Quốc tế Hạnh Phúc",
         formUrl: "https://forms.gle/zwgZ7Xeyk66DE1Ef7",
+        status: "registering",
+        recapUrl: "",
       },
       {
         city: "Hà Nội",
         hospital: "BV Nhi Hà Nội",
-        formUrl: "https://forms.gle/zwgZ7Xeyk66DE1Ef7",
+        formUrl: "",
+        status: "completed",
+        recapUrl: "",
       },
     ],
   },
@@ -134,13 +152,16 @@ export const schedule = [
         city: "Hà Nội",
         hospital: "BV Phụ sản Hà Nội",
         formUrl: "",
+        status: "upcoming",
+        recapUrl: "",
       },
       {
         city: "Hồ Chí Minh",
-        hospital: "BV Quốc Tế City",
+        hospital: "BV Quốc tế City",
         formUrl: "https://forms.gle/Q9z3bQbfUSZVkuc58",
+        status: "registering",
+        recapUrl: "",
       },
-      
     ],
   },
   {
@@ -150,16 +171,22 @@ export const schedule = [
         city: "Cần Thơ",
         hospital: "",
         formUrl: "",
+        status: "upcoming",
+        recapUrl: "",
       },
       {
         city: "Hải Dương",
         hospital: "",
         formUrl: "",
+        status: "upcoming",
+        recapUrl: "",
       },
       {
         city: "Hà Nội",
         hospital: "",
         formUrl: "",
+        status: "upcoming",
+        recapUrl: "",
       },
     ],
   },
@@ -170,11 +197,15 @@ export const schedule = [
         city: "Đồng Nai",
         hospital: "",
         formUrl: "",
+        status: "upcoming",
+        recapUrl: "",
       },
       {
         city: "Hồ Chí Minh",
         hospital: "",
         formUrl: "",
+        status: "upcoming",
+        recapUrl: "",
       },
     ],
   },
@@ -185,11 +216,15 @@ export const schedule = [
         city: "Đà Nẵng",
         hospital: "",
         formUrl: "",
+        status: "upcoming",
+        recapUrl: "",
       },
       {
         city: "Hà Nội",
         hospital: "",
         formUrl: "",
+        status: "upcoming",
+        recapUrl: "",
       },
     ],
   },
