@@ -132,8 +132,8 @@ export const schedule: {
       {
         city: "Hồ Chí Minh",
         hospital: "BV Quốc tế Hạnh Phúc",
-        formUrl: "https://forms.gle/zwgZ7Xeyk66DE1Ef7",
-        status: "registering",
+        formUrl: "",
+        status: "completed",
         recapUrl: "",
       },
       {
