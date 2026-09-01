@@ -27,21 +27,21 @@ export const partnerCommunities = [
   {
     name: "Z-moms",
     tagline: "Để con hơn tôi!",
-    emoji: "💗",
+    logo: "/logo.png",
     color: PINK,
     desc: "Cộng đồng hỗ trợ phụ nữ mang thai & nuôi con nhỏ tại Việt Nam với hơn hàng chục ngàn thành viên.",
   },
   {
     name: "IPD8",
     tagline: "Phát triển trí tuệ sớm",
-    emoji: "🧠",
+    logo: "/ipd8.png",
     color: BLUE,
     desc: "Trung tâm chuyên về phát triển trí tuệ và giáo dục sớm cho trẻ, cung cấp chương trình khoa học cho phụ huynh.",
   },
   {
     name: "Cộng Đồng Bầu",
     tagline: "Đồng hành cùng mẹ bầu",
-    emoji: "🤰",
+    logo: "/Congdongbau.png",
     color: "#7C3AED",
     desc: "Cộng đồng lớn nhất dành cho mẹ bầu tại Việt Nam, kết nối hàng triệu phụ nữ mang thai và sau sinh.",
   },
@@ -115,7 +115,6 @@ export type HospitalStatus =
   | "upcoming"
   | "registering"
   | "completed";
-
 export const schedule: {
   month: string;
   hospitals: {
@@ -131,104 +130,120 @@ export const schedule: {
     hospitals: [
       {
         city: "Hồ Chí Minh",
-        hospital: "BV Quốc tế Hạnh Phúc",
+        hospital: "Bệnh viện Đa Khoa Quốc tế Hạnh Phúc",
         formUrl: "",
         status: "completed",
-        recapUrl: "",
+        recapUrl: "https://www.facebook.com/share/p/1CysVPQdPH/",
       },
       {
         city: "Hà Nội",
-        hospital: "BV Nhi Hà Nội",
+        hospital: "Bệnh viện Nhi Hà Nội",
         formUrl: "",
         status: "completed",
-        recapUrl: "",
+        recapUrl: "https://www.facebook.com/share/p/1JYHKCr5Rd/",
       },
     ],
   },
+
   {
     month: "Tháng 9",
     hospitals: [
       {
         city: "Hà Nội",
-        hospital: "BV Phụ sản Hà Nội",
-        formUrl: "",
-        status: "upcoming",
+        hospital: "Bệnh viện Phụ sản Hà Nội",
+        formUrl: "https://forms.gle/zmXF2Eq3wj73Uv9M7",
+        status: "registering",
         recapUrl: "",
       },
       {
         city: "Hồ Chí Minh",
-        hospital: "BV Quốc tế City",
+        hospital: "Bệnh viện Quốc tế City",
         formUrl: "https://forms.gle/Q9z3bQbfUSZVkuc58",
         status: "registering",
         recapUrl: "",
       },
     ],
   },
+
   {
     month: "Tháng 10",
     hospitals: [
       {
+        city: "Hà Nội",
+        hospital: "Bệnh viện Phụ sản Trung ương",
+        formUrl: "",
+        status: "upcoming",
+        recapUrl: "",
+      },
+      {
+        city: "Hà Nội",
+        hospital: "Bệnh viện Phụ sản Âu Cơ",
+        formUrl: "",
+        status: "upcoming",
+        recapUrl: "",
+      },
+      {
         city: "Cần Thơ",
-        hospital: "",
-        formUrl: "",
-        status: "upcoming",
-        recapUrl: "",
-      },
-      {
-        city: "Hải Dương",
-        hospital: "",
-        formUrl: "",
-        status: "upcoming",
-        recapUrl: "",
-      },
-      {
-        city: "Hà Nội",
-        hospital: "",
+        hospital: "Bệnh viện Đa khoa Hoàn Mỹ Cửu Long",
         formUrl: "",
         status: "upcoming",
         recapUrl: "",
       },
     ],
   },
-  {
-    month: "Tháng 11",
-    hospitals: [
-      {
-        city: "Đồng Nai",
-        hospital: "",
-        formUrl: "",
-        status: "upcoming",
-        recapUrl: "",
-      },
-      {
-        city: "Hồ Chí Minh",
-        hospital: "",
-        formUrl: "",
-        status: "upcoming",
-        recapUrl: "",
-      },
-    ],
-  },
-  {
-    month: "Tháng 12",
-    hospitals: [
-      {
-        city: "Đà Nẵng",
-        hospital: "",
-        formUrl: "",
-        status: "upcoming",
-        recapUrl: "",
-      },
-      {
-        city: "Hà Nội",
-        hospital: "",
-        formUrl: "",
-        status: "upcoming",
-        recapUrl: "",
-      },
-    ],
-  },
-];
+{
+  month: "Tháng 11",
+  hospitals: [
+    {
+      city: "Hải Phòng",
+      hospital: "",
+      formUrl: "",
+      status: "upcoming",
+      recapUrl: "",
+    },
+    {
+      city: "Đồng Nai",
+      hospital: "",
+      formUrl: "",
+      status: "upcoming",
+      recapUrl: "",
+    },
+  ],
+},
+
+{
+  month: "Tháng 12",
+  hospitals: [
+    {
+      city: "Hồ Chí Minh",
+      hospital: "",
+      formUrl: "",
+      status: "upcoming",
+      recapUrl: "",
+    },
+    {
+      city: "Miền Bắc",
+      hospital: "",
+      formUrl: "",
+      status: "upcoming",
+      recapUrl: "",
+    },
+  ],
+},
+
+{
+  month: "Tháng 1/2027",
+  hospitals: [
+    {
+      city: "Đà Nẵng",
+      hospital: "",
+      formUrl: "",
+      status: "upcoming",
+      recapUrl: "",
+    },
+  ],
+},
+]
 
 export const stats = [
   { value: "6.000–12.000", label: "Mẹ & gia đình tham dự", icon: "👨‍👩‍👧" },

@@ -3,6 +3,24 @@ import { schedule, COLORS } from "@/data/eventData";
 
 const { PINK, GOLD } = COLORS;
 
+const buttonStyle = {
+  display: "inline-block",
+  textAlign: "center" as const,
+  padding: "10px 22px",
+  borderRadius: 999,
+  fontSize: ".9rem",
+  textDecoration: "none",
+  transition: "all .3s ease",
+};
+
+const mutedButton = {
+  ...buttonStyle,
+  background: "rgba(255,255,255,.18)",
+  color: "rgba(255,255,255,.85)",
+  border: "1px solid rgba(255,255,255,.2)",
+  fontWeight: 700,
+};
+
 export default function Schedule() {
   return (
     <section
@@ -14,20 +32,10 @@ export default function Schedule() {
         color: "white",
       }}
     >
-      <div
-        style={{
-          maxWidth: 1100,
-          margin: "0 auto",
-        }}
-      >
+      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         {/* Header */}
         <AnimSection>
-          <div
-            style={{
-              textAlign: "center",
-              marginBottom: 56,
-            }}
-          >
+          <div style={{ textAlign: "center", marginBottom: 56 }}>
             <div
               style={{
                 display: "inline-block",
@@ -35,7 +43,7 @@ export default function Schedule() {
                 color: "#fff",
                 borderRadius: 999,
                 padding: "8px 22px",
-                fontSize: "0.8rem",
+                fontSize: ".8rem",
                 fontWeight: 700,
                 marginBottom: 18,
                 border: "1px solid rgba(255,255,255,.25)",
@@ -73,11 +81,7 @@ export default function Schedule() {
         {/* Schedule */}
         {schedule.map((month, index) => (
           <AnimSection key={month.month} delay={index * 100}>
-            <div
-              style={{
-                marginBottom: 48,
-              }}
-            >
+            <div style={{ marginBottom: 48 }}>
               <h3
                 style={{
                   fontSize: "1.35rem",
@@ -97,176 +101,132 @@ export default function Schedule() {
                   gap: 18,
                 }}
               >
-                {month.hospitals.map((hospital, hospitalIndex) => (
-                  <div
-                    key={`${month.month}-${hospital.city}-${hospitalIndex}`}
-                    style={{
-                      background:
-                        hospital.status === "completed"
+                {month.hospitals.map((hospital, hospitalIndex) => {
+                  const completed = hospital.status === "completed";
+                  const registering = hospital.status === "registering";
+
+                  return (
+                    <div
+                      key={`${month.month}-${hospital.city}-${hospitalIndex}`}
+                      style={{
+                        background: completed
                           ? "rgba(255,255,255,.18)"
                           : "rgba(255,255,255,.12)",
-                      borderRadius: 20,
-                      padding: 22,
-                      border:
-                        hospital.status === "completed"
+                        borderRadius: 20,
+                        padding: 22,
+                        border: completed
                           ? `1px solid ${GOLD}`
                           : "1px solid rgba(255,255,255,.18)",
-                      backdropFilter: "blur(14px)",
-                      boxShadow: "0 10px 30px rgba(0,0,0,.12)",
-                      transition: "all .3s ease",
-                      display: "flex",
-                      flexDirection: "column",
-                    }}
-                  >
-                    {/* Status badge */}
-                    {hospital.status === "completed" && (
+                        backdropFilter: "blur(14px)",
+                        boxShadow: "0 10px 30px rgba(0,0,0,.12)",
+                        transition: "all .3s ease",
+                        display: "flex",
+                        flexDirection: "column",
+                      }}
+                    >
+                      {/* Status */}
+                      {completed && (
+                        <div
+                          style={{
+                            display: "inline-flex",
+                            alignSelf: "flex-start",
+                            alignItems: "center",
+                            background: "rgba(255,209,102,.18)",
+                            color: GOLD,
+                            border: "1px solid rgba(255,209,102,.45)",
+                            padding: "5px 12px",
+                            borderRadius: 999,
+                            fontSize: ".72rem",
+                            fontWeight: 800,
+                            marginBottom: 12,
+                          }}
+                        >
+                          ✓ ĐÃ HOÀN THÀNH
+                        </div>
+                      )}
+
+                      {/* City */}
                       <div
                         style={{
-                          display: "inline-flex",
-                          alignSelf: "flex-start",
-                          alignItems: "center",
-                          background: "rgba(255,209,102,.18)",
                           color: GOLD,
-                          border: "1px solid rgba(255,209,102,.45)",
-                          padding: "5px 12px",
-                          borderRadius: 999,
-                          fontSize: ".72rem",
                           fontWeight: 800,
-                          marginBottom: 12,
+                          fontSize: "1rem",
+                          marginBottom: 6,
                         }}
                       >
-                        ✓ ĐÃ HOÀN THÀNH
+                        📍 {hospital.city}
                       </div>
-                    )}
 
-                    {/* City */}
-                    <div
-                      style={{
-                        color: GOLD,
-                        fontWeight: 800,
-                        fontSize: "1rem",
-                        marginBottom: 6,
-                      }}
-                    >
-                      📍 {hospital.city}
-                    </div>
-
-                    {/* Hospital */}
-                    <div
-                      style={{
-                        color: "rgba(255,255,255,.92)",
-                        fontSize: ".95rem",
-                        lineHeight: 1.5,
-                        minHeight: 48,
-                        marginBottom: 20,
-                        flexGrow: 1,
-                      }}
-                    >
-                      {hospital.hospital || "Đang cập nhật"}
-                    </div>
-
-                    {/* COMPLETED */}
-                    {hospital.status === "completed" &&
-                      (hospital.recapUrl ? (
-                        <a
-                          href={hospital.recapUrl}
-                          style={{
-                            display: "inline-block",
-                            textAlign: "center",
-                            background: GOLD,
-                            color: "#173B8F",
-                            padding: "10px 22px",
-                            borderRadius: 999,
-                            fontWeight: 800,
-                            fontSize: ".9rem",
-                            textDecoration: "none",
-                            boxShadow: "0 8px 20px rgba(0,0,0,.2)",
-                            transition: "all .3s ease",
-                          }}
-                        >
-                          Xem hành trình →
-                        </a>
-                      ) : (
-                        <span
-                          style={{
-                            display: "inline-block",
-                            textAlign: "center",
-                            background: "rgba(255,209,102,.12)",
-                            color: GOLD,
-                            padding: "10px 22px",
-                            borderRadius: 999,
-                            fontWeight: 700,
-                            fontSize: ".9rem",
-                            border: "1px solid rgba(255,209,102,.3)",
-                            cursor: "default",
-                          }}
-                        >
-                          Hành trình sắp cập nhật
-                        </span>
-                      ))}
-
-                    {/* REGISTERING */}
-                    {hospital.status === "registering" &&
-                      (hospital.formUrl ? (
-                        <a
-                          href={hospital.formUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{
-                            display: "inline-block",
-                            textAlign: "center",
-                            background: PINK,
-                            color: "#fff",
-                            padding: "10px 22px",
-                            borderRadius: 999,
-                            fontWeight: 700,
-                            fontSize: ".9rem",
-                            textDecoration: "none",
-                            boxShadow: "0 8px 20px rgba(236,10,125,.35)",
-                            transition: "all .3s ease",
-                          }}
-                        >
-                          Đăng ký tham dự →
-                        </a>
-                      ) : (
-                        <span
-                          style={{
-                            display: "inline-block",
-                            textAlign: "center",
-                            background: "rgba(255,255,255,.18)",
-                            color: "rgba(255,255,255,.85)",
-                            padding: "10px 22px",
-                            borderRadius: 999,
-                            fontWeight: 700,
-                            fontSize: ".9rem",
-                            border: "1px solid rgba(255,255,255,.2)",
-                          }}
-                        >
-                          Sắp mở đăng ký
-                        </span>
-                      ))}
-
-                    {/* UPCOMING */}
-                    {hospital.status === "upcoming" && (
-                      <span
+                      {/* Hospital */}
+                      <div
                         style={{
-                          display: "inline-block",
-                          textAlign: "center",
-                          background: "rgba(255,255,255,.18)",
-                          color: "rgba(255,255,255,.85)",
-                          padding: "10px 22px",
-                          borderRadius: 999,
-                          fontWeight: 700,
-                          fontSize: ".9rem",
-                          border: "1px solid rgba(255,255,255,.2)",
-                          cursor: "default",
+                          color: "rgba(255,255,255,.92)",
+                          fontSize: ".95rem",
+                          lineHeight: 1.5,
+                          minHeight: 48,
+                          marginBottom: 20,
+                          flexGrow: 1,
                         }}
                       >
-                        Dự kiến
-                      </span>
-                    )}
-                  </div>
-                ))}
+                        {hospital.hospital || "Đang cập nhật"}
+                      </div>
+
+                      {/* Action */}
+                      {completed ? (
+                        hospital.recapUrl ? (
+                          <a
+                            href={hospital.recapUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                              ...buttonStyle,
+                              background: GOLD,
+                              color: "#173B8F",
+                              fontWeight: 800,
+                              boxShadow: "0 8px 20px rgba(0,0,0,.2)",
+                            }}
+                          >
+                            Xem hành trình →
+                          </a>
+                        ) : (
+                          <span
+                            style={{
+                              ...buttonStyle,
+                              background: "rgba(255,209,102,.12)",
+                              color: GOLD,
+                              fontWeight: 700,
+                              border: "1px solid rgba(255,209,102,.3)",
+                              cursor: "default",
+                            }}
+                          >
+                            Hành trình sắp cập nhật
+                          </span>
+                        )
+                      ) : registering ? (
+                        hospital.formUrl ? (
+                          <a
+                            href={hospital.formUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                              ...buttonStyle,
+                              background: PINK,
+                              color: "#fff",
+                              fontWeight: 700,
+                              boxShadow: "0 8px 20px rgba(236,10,125,.35)",
+                            }}
+                          >
+                            Đăng ký tham dự →
+                          </a>
+                        ) : (
+                          <span style={mutedButton}>Sắp mở đăng ký</span>
+                        )
+                      ) : (
+                        <span style={mutedButton}>Dự kiến</span>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </AnimSection>
