@@ -150,9 +150,9 @@ export const schedule: {
     hospitals: [
       {
         city: "Hà Nội",
-        hospital: "Bệnh viện Phụ sản Hà Nội",
-        formUrl: "https://forms.gle/zmXF2Eq3wj73Uv9M7",
-        status: "registering",
+        hospital: "",
+        formUrl: "",
+        status: "upcoming",
         recapUrl: "",
       },
       {
