@@ -1,7 +1,7 @@
 export const COLORS = {
-  PINK: "#EC0A7D",       // Hồng Z-Moms
-  BLUE: "#173B8F",       // Xanh logo
-  GOLD: "#FFD6E8",       // Hồng nhạt dùng highlight
+  PINK: "#EC0A7D", // Hồng Z-Moms
+  BLUE: "#173B8F", // Xanh logo
+  GOLD: "#FFD6E8", // Hồng nhạt dùng highlight
   LIGHT_PINK: "#FFF5FA",
   LIGHT_BLUE: "#F2F6FF",
 };
@@ -111,10 +111,7 @@ export const zones = [
   },
 ];
 
-export type HospitalStatus =
-  | "upcoming"
-  | "registering"
-  | "completed";
+export type HospitalStatus = "upcoming" | "registering" | "completed";
 export const schedule: {
   month: string;
   hospitals: {
@@ -149,10 +146,10 @@ export const schedule: {
     month: "Tháng 9",
     hospitals: [
       {
-        city: "Hà Nội",
-        hospital: "",
-        formUrl: "",
-        status: "upcoming",
+        city: "Hải Phòng",
+        hospital: "Bệnh viện Quốc Tế Green",
+        formUrl: "https://forms.gle/rPVsmgeW3y2KYiWG6",
+        status: "registering",
         recapUrl: "",
       },
       {
@@ -191,59 +188,59 @@ export const schedule: {
       },
     ],
   },
-{
-  month: "Tháng 11",
-  hospitals: [
-    {
-      city: "Hải Phòng",
-      hospital: "",
-      formUrl: "",
-      status: "upcoming",
-      recapUrl: "",
-    },
-    {
-      city: "Đồng Nai",
-      hospital: "",
-      formUrl: "",
-      status: "upcoming",
-      recapUrl: "",
-    },
-  ],
-},
+  {
+    month: "Tháng 11",
+    hospitals: [
+      {
+        city: "Hải Phòng",
+        hospital: "",
+        formUrl: "",
+        status: "upcoming",
+        recapUrl: "",
+      },
+      {
+        city: "Đồng Nai",
+        hospital: "",
+        formUrl: "",
+        status: "upcoming",
+        recapUrl: "",
+      },
+    ],
+  },
 
-{
-  month: "Tháng 12",
-  hospitals: [
-    {
-      city: "Hồ Chí Minh",
-      hospital: "",
-      formUrl: "",
-      status: "upcoming",
-      recapUrl: "",
-    },
-    {
-      city: "Miền Bắc",
-      hospital: "",
-      formUrl: "",
-      status: "upcoming",
-      recapUrl: "",
-    },
-  ],
-},
+  {
+    month: "Tháng 12",
+    hospitals: [
+      {
+        city: "Hồ Chí Minh",
+        hospital: "",
+        formUrl: "",
+        status: "upcoming",
+        recapUrl: "",
+      },
+      {
+        city: "Miền Bắc",
+        hospital: "",
+        formUrl: "",
+        status: "upcoming",
+        recapUrl: "",
+      },
+    ],
+  },
 
-{
-  month: "Tháng 1/2027",
-  hospitals: [
-    {
-      city: "Đà Nẵng",
-      hospital: "",
-      formUrl: "",
-      status: "upcoming",
-      recapUrl: "",
-    },
-  ],
-},
-]
+  {
+    month: "Tháng 1/2027",
+    hospitals: [
+      {
+        city: "Đà Nẵng",
+        hospital: "",
+        formUrl: "",
+        status: "upcoming",
+        recapUrl: "",
+      },
+    ],
+  },
+];
 
 export const stats = [
   { value: "6.000–12.000", label: "Mẹ & gia đình tham dự", icon: "👨‍👩‍👧" },
