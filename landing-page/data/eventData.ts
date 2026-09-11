@@ -155,8 +155,8 @@ export const schedule: {
       {
         city: "Hồ Chí Minh",
         hospital: "Bệnh viện Quốc tế City",
-        formUrl: "https://forms.gle/Q9z3bQbfUSZVkuc58",
-        status: "registering",
+        formUrl: "",
+        status: "completed",
         recapUrl: "",
       },
     ],
