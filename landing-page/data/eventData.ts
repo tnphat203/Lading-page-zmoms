@@ -166,15 +166,15 @@ export const schedule: {
     month: "Tháng 10",
     hospitals: [
       {
-        city: "Hà Nội",
-        hospital: "Bệnh viện Phụ sản Trung ương",
-        formUrl: "",
-        status: "upcoming",
+        city: "Hải Phòng",
+        hospital: "Bệnh viện Phụ sản Hải Dương",
+        formUrl: "https://forms.gle/A5cpAS9Xo28M72nv9",
+        status: "registering",
         recapUrl: "",
       },
       {
-        city: "Hà Nội",
-        hospital: "Bệnh viện Phụ sản Âu Cơ",
+        city: "Bình Dương",
+        hospital: "",
         formUrl: "",
         status: "upcoming",
         recapUrl: "",
