@@ -173,10 +173,10 @@ export const schedule: {
         recapUrl: "",
       },
       {
-        city: "Bình Dương",
-        hospital: "",
-        formUrl: "",
-        status: "upcoming",
+        city: "Hà Nội",
+        hospital: "Bệnh viện Phụ sản Hà Nội",
+        formUrl: "https://forms.gle/Bbp1w6g2St4vg67i9",
+        status: "registering",
         recapUrl: "",
       },
       {
