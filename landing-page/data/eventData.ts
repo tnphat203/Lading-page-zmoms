@@ -157,7 +157,7 @@ export const schedule: {
         hospital: "Bệnh viện Quốc tế City",
         formUrl: "",
         status: "completed",
-        recapUrl: "",
+        recapUrl: "https://www.facebook.com/share/p/1bHFfoD1X6/",
       },
     ],
   },
