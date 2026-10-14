@@ -200,7 +200,7 @@ export const schedule: {
         recapUrl: "",
       },
       {
-        city: "Đồng Nai",
+        city: "Bình Dương",
         hospital: "",
         formUrl: "",
         status: "upcoming",
