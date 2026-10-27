@@ -150,7 +150,8 @@ export const schedule: {
         hospital: "Bệnh viện Quốc Tế Green",
         formUrl: "",
         status: "completed",
-        recapUrl: "",
+        recapUrl:
+          "https://www.facebook.com/share/p/1DSpYKPw3Y/?mibextid=wwXIfr",
       },
       {
         city: "Hồ Chí Minh",
@@ -177,7 +178,8 @@ export const schedule: {
         hospital: "Bệnh viện Phụ sản Hà Nội",
         formUrl: "https://forms.gle/Bbp1w6g2St4vg67i9",
         status: "completed",
-        recapUrl: "",
+        recapUrl:
+          "https://www.facebook.com/share/p/19koV9pc9X/?mibextid=wwXIfr",
       },
       {
         city: "Cần Thơ",
