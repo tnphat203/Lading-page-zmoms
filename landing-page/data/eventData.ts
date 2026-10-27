@@ -169,14 +169,14 @@ export const schedule: {
         city: "Hải Phòng",
         hospital: "Bệnh viện Phụ sản Hải Dương",
         formUrl: "https://forms.gle/A5cpAS9Xo28M72nv9",
-        status: "registering",
+        status: "completed",
         recapUrl: "",
       },
       {
         city: "Hà Nội",
         hospital: "Bệnh viện Phụ sản Hà Nội",
         formUrl: "https://forms.gle/Bbp1w6g2St4vg67i9",
-        status: "registering",
+        status: "completed",
         recapUrl: "",
       },
       {
