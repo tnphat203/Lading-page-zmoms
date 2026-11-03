@@ -186,7 +186,7 @@ export const schedule: {
         hospital: "Bệnh viện Đa khoa Hoàn Mỹ Cửu Long",
         formUrl:
           "https://docs.google.com/forms/d/e/1FAIpQLSff8iGumk-CzZfeNKCQWdqTo4Bf4I7QA5vDDopFjvXEASoaeA/viewform?usp=sharing&ouid=116305596791559913500",
-        status: "registering",
+        status: "completed",
         recapUrl: "",
       },
     ],
