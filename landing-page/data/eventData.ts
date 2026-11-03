@@ -171,7 +171,7 @@ export const schedule: {
         hospital: "Bệnh viện Phụ sản Hải Dương",
         formUrl: "https://forms.gle/A5cpAS9Xo28M72nv9",
         status: "completed",
-        recapUrl: "",
+        recapUrl: "https://www.facebook.com/share/p/1DVEunAebt/",
       },
       {
         city: "Hà Nội",
