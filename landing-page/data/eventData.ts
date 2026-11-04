@@ -187,7 +187,7 @@ export const schedule: {
         formUrl:
           "https://docs.google.com/forms/d/e/1FAIpQLSff8iGumk-CzZfeNKCQWdqTo4Bf4I7QA5vDDopFjvXEASoaeA/viewform?usp=sharing&ouid=116305596791559913500",
         status: "completed",
-        recapUrl: "",
+        recapUrl: "https://www.facebook.com/share/p/1aAbvAcN4d/",
       },
     ],
   },
