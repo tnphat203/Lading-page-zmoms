@@ -198,8 +198,9 @@ export const schedule: {
         city: "Bình Dương",
         hospital: "Bệnh viện Hoàn Mỹ Bình Dương",
         formUrl: "https://forms.gle/CWU5MdtLG7mECRqd9",
-        status: "registering",
-        recapUrl: "",
+        status: "completed",
+        recapUrl:
+          "https://www.facebook.com/share/v/1EAyTydpur/?mibextid=wwXIfr",
       },
       {
         city: "Bình Dương",
