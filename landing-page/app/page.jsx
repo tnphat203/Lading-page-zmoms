@@ -10,6 +10,7 @@ import CTA from "@/components/CTA";
 import Organizers from "@/components/Organizers";
 import Schedule from "@/components/Schedule";
 import EventZones from "@/components/EventZones";
+import MemoryGallery from "@/components/MemoryGallery";
 import WhyAttend from "@/components/WhyAttend";
 import Stats from "@/components/Stats";
 export default function Home() {
@@ -39,6 +40,7 @@ export default function Home() {
       {/* WHY */}
       <WhyAttend />
       <EventZones />
+      <MemoryGallery />
 
       <Schedule />
       <Organizers />

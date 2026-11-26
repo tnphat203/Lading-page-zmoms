@@ -3,24 +3,75 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --zone-font-heading: "Baloo 2", cursive;
+  --zone-font-body: "Be Vietnam Pro", sans-serif;
+
+  --zone-title-size: 24px;
+  --zone-title-size-mobile: 19px;
+
+  --zone-description-size: 17px;
+  --zone-description-size-mobile: 14px;
+
+  --zone-title-line-height: 1.25;
+  --zone-description-line-height: 1.5;
+
+  --zone-blue: #173b8f;
+  --zone-pink: #ec008c;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--zone-font-body);
+  --font-heading: var(--zone-font-heading);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--zone-font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography chung */
+
+.zone-heading {
+  font-family: var(--zone-font-heading);
+  font-size: var(--zone-title-size);
+  font-weight: 800;
+  line-height: var(--zone-title-line-height);
+  color: var(--zone-blue);
+  margin: 0;
+}
+
+.zone-description {
+  font-family: var(--zone-font-body);
+  font-size: var(--zone-description-size);
+  font-weight: 400;
+  line-height: var(--zone-description-line-height);
+  color: #202020;
+  margin: 0;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .zone-heading {
+    font-size: var(--zone-title-size-mobile);
+  }
+
+  .zone-description {
+    font-size: var(--zone-description-size-mobile);
+  }
 }

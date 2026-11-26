@@ -8,7 +8,6 @@ const { PINK, BLUE, GOLD } = COLORS;
 export default function Hero() {
   const handleRegister = () => {
     const section = document.getElementById("schedule");
-
     if (!section) return;
 
     const y = section.getBoundingClientRect().top + window.pageYOffset - 90;
@@ -22,12 +21,11 @@ export default function Hero() {
   return (
     <section className="hero">
       <div className="hero-blob hero-blob--pink" style={{ background: PINK }} />
-
       <div className="hero-blob hero-blob--blue" style={{ background: BLUE }} />
-
       <div className="hero-blob hero-blob--gold" style={{ background: GOLD }} />
 
       <div className="hero-container">
+        {/* LEFT CONTENT */}
         <div className="hero-content">
           <div className="hero-badge">
             <span className="pulse-ring" style={{ background: PINK }} />
@@ -76,14 +74,26 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hero-image float-anim">
-          <Image
-            src="/hero.png"
-            alt="Ngày hội 1.000 Ngày Vàng"
-            width={520}
-            height={520}
-            priority
-          />
+        {/* RIGHT CONTENT */}
+        <div className="hero-right">
+          <div className="hero-right-heading">
+            <h2>Một ngày hội. Ngàn khoảnh khắc yêu thương.</h2>
+
+            <p>
+              Nơi ba mẹ cùng học hỏi, con được khám phá và cả gia đình có thêm
+              những kỷ niệm đáng nhớ.
+            </p>
+          </div>
+
+          <div className="hero-image">
+            <Image
+              src="/IMG/TRANG 1/Be_332.jpeg"
+              alt="Khoảnh khắc tại Ngày hội 1.000 Ngày Vàng"
+              width={840}
+              height={600}
+              priority
+            />
+          </div>
         </div>
       </div>
 
@@ -140,6 +150,8 @@ export default function Hero() {
           gap: 60px;
           align-items: center;
           box-sizing: border-box;
+          position: relative;
+          z-index: 1;
         }
 
         .hero-content {
@@ -251,19 +263,45 @@ export default function Hero() {
           flex-shrink: 0;
         }
 
-        .hero-image {
-          display: flex;
-          justify-content: center;
-          position: relative;
+        /* RIGHT CONTENT */
+
+        .hero-right {
           min-width: 0;
+        }
+
+        .hero-right-heading {
+          text-align: center;
+          margin-bottom: 8px;
+        }
+
+        .hero-right-heading h2 {
+          color: ${PINK};
+          font-size: clamp(1.2rem, 2vw, 1.55rem);
+          font-weight: 800;
+          line-height: 1.4;
+          margin: 0 0 4px;
+        }
+
+        .hero-right-heading p {
+          color: ${BLUE};
+          font-size: 1rem;
+          font-weight: 600;
+          line-height: 1.5;
+          margin: 0;
+        }
+
+        .hero-image {
+          width: 100%;
+          aspect-ratio: 1.38 / 1;
+          overflow: hidden;
+          position: relative;
         }
 
         .hero-image :global(img) {
           width: 100%;
-          max-width: 520px;
-          height: auto;
-          object-fit: contain;
-          filter: drop-shadow(0 20px 40px rgba(233, 30, 140, 0.25));
+          height: 100%;
+          object-fit: cover;
+          display: block;
         }
 
         @media (max-width: 900px) {
@@ -281,8 +319,12 @@ export default function Hero() {
             font-size: 0.95rem;
           }
 
-          .hero-image :global(img) {
-            max-width: 440px;
+          .hero-right-heading h2 {
+            font-size: 1.2rem;
+          }
+
+          .hero-right-heading p {
+            font-size: 0.9rem;
           }
         }
 
@@ -323,23 +365,23 @@ export default function Hero() {
             justify-content: center;
           }
 
-          .hero-image {
-            order: -1;
+          .hero-right {
+            width: 100%;
           }
 
-          .hero-image :global(img) {
-            max-width: min(72vw, 420px);
+          .hero-right-heading {
+            margin-bottom: 12px;
+          }
+
+          .hero-image {
+            aspect-ratio: 1.38 / 1;
           }
         }
 
         @media (max-width: 480px) {
-          .hero {
-            min-height: auto;
-          }
-
           .hero-container {
             padding: 42px 16px 44px;
-            gap: 24px;
+            gap: 28px;
           }
 
           .hero-blob--pink {
@@ -363,18 +405,11 @@ export default function Hero() {
             left: 35%;
           }
 
-          .hero-image :global(img) {
-            max-width: 78vw;
-          }
-
           .hero-badge {
-            display: inline-flex;
             max-width: 100%;
-            box-sizing: border-box;
             padding: 7px 14px;
             margin-bottom: 18px;
             font-size: 0.68rem;
-            line-height: 1.35;
             justify-content: center;
           }
 
@@ -425,6 +460,14 @@ export default function Hero() {
 
           .hero-highlight {
             font-size: 0.82rem;
+          }
+
+          .hero-right-heading h2 {
+            font-size: 1.15rem;
+          }
+
+          .hero-right-heading p {
+            font-size: 0.85rem;
           }
         }
 

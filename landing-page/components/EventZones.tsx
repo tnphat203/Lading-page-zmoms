@@ -6,15 +6,28 @@ import { useState } from "react";
 import AnimSection from "@/components/AnimSection";
 import { zones, COLORS } from "@/data/eventData";
 
+import Zone1 from "@/components/zones/Zone1";
+import Zone2 from "@/components/zones/Zone2";
+import Zone3 from "@/components/zones/Zone3";
+import Zone4 from "@/components/zones/Zone4";
+import Zone5 from "@/components/zones/Zone5";
+
 const { BLUE, PINK } = COLORS;
+
+const zoneComponents = [Zone1, Zone2, Zone3, Zone4, Zone5];
 
 export default function EventZones() {
   const [activeZone, setActiveZone] = useState(0);
-  const currentZone = zones[activeZone];
+
+  const currentZone = zones[activeZone] ?? zones[0];
+  const ActiveZone = zoneComponents[activeZone] ?? Zone1;
+
+  if (!currentZone) return null;
 
   return (
     <section className="event-zones">
       <div className="event-zones__container">
+        {/* SECTION HEADING */}
         <AnimSection>
           <div className="event-zones__heading">
             <div className="event-zones__badge">5 KHU VỰC TRẢI NGHIỆM</div>
@@ -25,60 +38,38 @@ export default function EventZones() {
           </div>
         </AnimSection>
 
+        {/* ZONE TABS */}
         <AnimSection delay={100}>
           <div className="zone-tabs">
-            {zones.map((z, i) => (
+            {zones.map((zone, index) => (
               <button
-                key={z.title}
-                className={`zone-tab${activeZone === i ? " active" : ""}`}
-                onClick={() => setActiveZone(i)}
+                key={zone.title}
+                type="button"
+                className={`zone-tab${activeZone === index ? " active" : ""}`}
+                onClick={() => setActiveZone(index)}
+                aria-pressed={activeZone === index}
                 style={{
-                  background: activeZone === i ? z.color : `${z.color}15`,
-                  color: activeZone === i ? "white" : z.color,
+                  background:
+                    activeZone === index ? zone.color : `${zone.color}15`,
+                  color: activeZone === index ? "white" : zone.color,
                 }}
               >
-                {z.icon} {z.subtitle}
+                {zone.icon} {zone.subtitle}
               </button>
             ))}
           </div>
         </AnimSection>
 
+        {/* SHARED ZONE CONTENT FRAME */}
         <AnimSection delay={200}>
-          <div
-            className="zone-detail"
-            style={{
-              background: currentZone.bg,
-              borderColor: `${currentZone.color}25`,
-            }}
-          >
-            <div className="zone-detail__content">
-              <div className="zone-info">
-                <div className="zone-info__icon">{currentZone.icon}</div>
-
-                <h3 style={{ color: currentZone.color }}>
-                  {currentZone.title}
-                </h3>
-
-                <p className="zone-subtitle">{currentZone.subtitle}</p>
-
-                <p className="zone-desc">{currentZone.desc}</p>
-              </div>
-
-              <div className="zone-visual">
-                <div
-                  className="zone-visual__circle"
-                  style={{
-                    background: `${currentZone.color}15`,
-                    borderColor: `${currentZone.color}40`,
-                  }}
-                >
-                  {currentZone.icon}
-                </div>
-              </div>
+          <div className="zone-content">
+            <div className="zone-content__inner" key={activeZone}>
+              <ActiveZone />
             </div>
           </div>
         </AnimSection>
 
+        {/* EVENT MAP */}
         <AnimSection delay={300}>
           <div className="map-card">
             <div className="map-heading">
@@ -97,6 +88,7 @@ export default function EventZones() {
                 width={1400}
                 height={900}
                 priority={false}
+                sizes="(max-width: 768px) 100vw, 1100px"
               />
             </div>
           </div>
@@ -104,16 +96,19 @@ export default function EventZones() {
       </div>
 
       <style jsx>{`
+        /* MAIN SECTION */
         .event-zones {
           background: white;
           padding: 80px 24px;
         }
 
         .event-zones__container {
-          max-width: 1100px;
+          width: 100%;
+          max-width: 1200px;
           margin: 0 auto;
         }
 
+        /* SECTION HEADING */
         .event-zones__heading {
           text-align: center;
           margin-bottom: 40px;
@@ -144,6 +139,7 @@ export default function EventZones() {
           color: ${PINK};
         }
 
+        /* ZONE TABS */
         .zone-tabs {
           display: flex;
           gap: 10px;
@@ -161,6 +157,7 @@ export default function EventZones() {
           font-weight: 800;
           cursor: pointer;
           white-space: nowrap;
+          flex-shrink: 0;
           transition:
             transform 0.2s ease,
             background 0.2s ease;
@@ -170,73 +167,50 @@ export default function EventZones() {
           transform: translateY(-2px);
         }
 
-        .zone-detail {
-          border-radius: 28px;
-          padding: 48px;
-          border: 2px solid;
-          transition: background 0.3s ease;
+        .zone-tab:focus-visible {
+          outline: 3px solid ${BLUE};
+          outline-offset: 3px;
         }
 
-        .zone-detail__content {
-          display: grid;
-          grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-          gap: 40px;
-          align-items: center;
-        }
-
-        .zone-info {
+        /* SHARED CONTENT FRAME */
+        .zone-content {
+          width: 100%;
           min-width: 0;
-        }
+          min-height: 540px;
+          height: auto;
 
-        .zone-info__icon {
-          font-size: 4rem;
-          line-height: 1;
-          margin-bottom: 16px;
-        }
-
-        .zone-info h3 {
-          font-family: "Baloo 2", cursive;
-          font-weight: 800;
-          font-size: 1.8rem;
-          line-height: 1.25;
-          margin: 0 0 8px;
-        }
-
-        .zone-subtitle {
-          font-size: 0.85rem;
-          font-weight: 700;
-          color: #888;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          line-height: 1.4;
-          margin: 0 0 16px;
-        }
-
-        .zone-desc {
-          font-size: 1rem;
-          color: #555;
-          line-height: 1.8;
-          margin: 0;
-        }
-
-        .zone-visual {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .zone-visual__circle {
-          width: 220px;
-          height: 220px;
-          border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 8rem;
-          border: 3px dashed;
-          box-sizing: border-box;
+
+          overflow: visible;
         }
 
+        .zone-content__inner {
+          width: 100%;
+          min-width: 0;
+          flex-shrink: 0;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          animation: zoneFadeIn 0.35s ease;
+        }
+
+        @keyframes zoneFadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(8px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        /* EVENT MAP */
         .map-card {
           margin-top: 40px;
           background: white;
@@ -280,6 +254,7 @@ export default function EventZones() {
           border-radius: 20px;
         }
 
+        /* TABLET */
         @media (max-width: 800px) {
           .event-zones__heading {
             margin-bottom: 32px;
@@ -298,28 +273,12 @@ export default function EventZones() {
             display: none;
           }
 
-          .zone-tab {
-            flex-shrink: 0;
-          }
-
-          .zone-detail {
-            padding: 32px 24px;
-          }
-
-          .zone-detail__content {
-            grid-template-columns: 1fr;
-            gap: 28px;
-          }
-
-          .zone-info {
-            text-align: center;
-          }
-
-          .zone-visual {
-            order: -1;
+          .zone-content {
+            min-height: 520px;
           }
         }
 
+        /* MOBILE */
         @media (max-width: 480px) {
           .event-zones {
             padding: 52px 16px;
@@ -351,41 +310,8 @@ export default function EventZones() {
             font-size: 0.78rem;
           }
 
-          .zone-detail {
-            border-radius: 22px;
-            padding: 24px 18px;
-          }
-
-          .zone-detail__content {
-            gap: 22px;
-          }
-
-          .zone-visual__circle {
-            width: 150px;
-            height: 150px;
-            font-size: 5.2rem;
-            border-width: 2px;
-          }
-
-          .zone-info__icon {
-            display: none;
-          }
-
-          .zone-info h3 {
-            font-size: 1.5rem;
-            line-height: 1.3;
-            margin-bottom: 6px;
-          }
-
-          .zone-subtitle {
-            font-size: 0.72rem;
-            letter-spacing: 0.7px;
-            margin-bottom: 12px;
-          }
-
-          .zone-desc {
-            font-size: 0.9rem;
-            line-height: 1.65;
+          .zone-content {
+            min-height: 500px;
           }
 
           .map-card {
@@ -417,6 +343,7 @@ export default function EventZones() {
           }
         }
 
+        /* VERY SMALL MOBILE */
         @media (max-width: 360px) {
           .event-zones {
             padding: 48px 12px;
@@ -426,22 +353,8 @@ export default function EventZones() {
             font-size: 1.65rem;
           }
 
-          .zone-detail {
-            padding: 20px 16px;
-          }
-
-          .zone-visual__circle {
-            width: 135px;
-            height: 135px;
-            font-size: 4.6rem;
-          }
-
-          .zone-info h3 {
-            font-size: 1.4rem;
-          }
-
-          .zone-desc {
-            font-size: 0.85rem;
+          .zone-content {
+            min-height: 480px;
           }
 
           .map-card {
